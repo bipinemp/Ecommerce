@@ -1,0 +1,365 @@
+.cartmain {
+  width: 90%;
+  margin: 20px auto;
+  display: flex;
+  gap: 3em;
+  flex-direction: column;
+}
+.cartcheckout {
+  display: flex;
+  gap: 3em;
+}
+.cart {
+  width: 68%;
+  height: 70vh;
+  overflow-y: scroll;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--TextFont);
+  color: var(--DarkBlack);
+}
+.cart::-webkit-scrollbar {
+  width: 5px;
+}
+
+.cart::-webkit-scrollbar {
+  width: 4px;
+}
+.cart::-moz-scrollbar {
+  display: none;
+}
+
+.cart::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar);
+  width: 10px;
+  border-radius: 10px;
+}
+.cart::-webkit-scrollbar-thumb:hover {
+  background-color: var(--scrollbarHover);
+}
+.carttitle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--TextFont);
+  color: var(--DarkBlack);
+}
+.carttitle div {
+  display: flex;
+  align-items: center;
+}
+
+.cartitem {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  border-bottom: 2px solid var(--LightLightBlack);
+}
+.totalvalue {
+  width: 70px;
+}
+.deletefromcart {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--error);
+}
+.cartitem img {
+  width: 150px;
+  padding: 10px;
+  border-radius: 10px;
+  background: var(--LightLightBlack);
+}
+.cartitem h1 {
+  width: 250px;
+  color: var(--DarkBlack);
+  font-size: 1.2em;
+}
+.bold {
+  font-weight: bold;
+}
+.grandtotal {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  padding-bottom: 50px;
+  padding-right: 25px;
+}
+.noitemincart {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1.4em;
+  color: var(--error);
+  text-align: center;
+  font-family: var(--TextFont);
+}
+.cartitemtitle {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.cartitemtitle div:nth-child(2) p {
+  color: var(--error);
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* For Checkout component */
+.checkout {
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.5em;
+}
+.checkout div:nth-child(1) {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.checkout div:nth-child(1) label {
+  font-family: var(--TextFont);
+  opacity: 0.6;
+  font-size: 0.9em;
+  font-weight: bold;
+}
+.checkout div:nth-child(1) input {
+  padding: 5px 20px;
+  outline: none;
+  border: 1px solid var(--LightBlack);
+  font-family: var(--TextFont);
+  color: var(--DarkBlack);
+}
+.checkout div:nth-child(1) input::placeholder {
+  color: var(--LightBlack);
+  font-size: 0.9em;
+}
+.checkout div:nth-child(1) form {
+  display: flex;
+  gap: 5px;
+}
+.checkout div:nth-child(1) button {
+  padding: 5px 20px;
+  font-family: var(--TextFont);
+  background-color: var(--LightGreen);
+  outline: none;
+  border: none;
+  color: var(--White);
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+.checkout div:nth-child(2) {
+  width: 100%;
+  font-family: var(--TextFont);
+}
+.checkout div:nth-child(2) h3 {
+  font-size: 1.1em;
+  color: var(--DarkBlack);
+  opacity: 0.9;
+  margin-bottom: 5px;
+}
+.checkout div:nth-child(2) div p:first-child {
+  color: var(--LightBlack);
+  margin-bottom: 5px;
+}
+.checkout div:nth-child(2) div {
+  display: flex;
+  justify-content: space-between;
+}
+.checkout .summtotal {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--TextFont);
+  align-items: center;
+  padding-top: 10px;
+  border-top: 2px solid var(--LightLightBlack);
+}
+.checkout div:nth-child(3) h3 {
+  font-size: 1.5em;
+}
+.checkout div:nth-child(3) .summarytotal {
+  color: var(--LightGreen);
+  font-size: 1.4em;
+}
+.checkout div:nth-child(4) {
+  width: 100%;
+}
+.checkout div:nth-child(4) button {
+  width: 100%;
+  padding: 10px 20px;
+  border: none;
+  outline: none;
+  background-color: var(--DarkGreen);
+  color: var(--White);
+  font-family: var(--TextFont);
+  font-size: 0.9em;
+  letter-spacing: 1px;
+  transition: all 200ms linear;
+}
+.checkout div:nth-child(4) button:hover {
+  transform: scale(0.95);
+}
+.invalidpromo {
+  color: var(--error);
+  font-family: var(--TextFont);
+  font-weight: bold;
+  font-size: 0.8em;
+  transition: all 150ms linear;
+}
+
+/* For Modal  */
+.modal {
+  width: 55%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+  padding: 50px 30px 50px 40px;
+  background-color: var(--White);
+  transition: all 200ms linear;
+  border-radius: 10px;
+}
+.overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.modal form {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-family: var(--TextFont);
+}
+.modal form label {
+  font-size: 0.9em;
+  font-weight: bold;
+  color: var(--DarkBlack);
+}
+.formleft {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.formleft div {
+  display: flex;
+  flex-direction: column;
+}
+.formright {
+  width: 47%;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.formright div {
+  display: flex;
+  flex-direction: column;
+}
+.modal form input {
+  border: 1px solid transparent;
+  outline: none;
+  background-color: var(--LightLightBlack);
+  padding: 10px 20px;
+  font-size: 0.9em;
+  border-radius: 5px;
+}
+.modal form input::placeholder {
+  opacity: 0.8;
+}
+.closemodal {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.5em;
+}
+.formright button {
+  background-color: var(--LightGreen);
+  border: none;
+  outline: none;
+  color: var(--White);
+  padding: 10px 20px;
+  border-radius: 5px;
+}
+body {
+  overflow: scroll;
+}
+body.noscroll {
+  overflow: hidden;
+}
+form input.input-error {
+  border: 1px solid var(--error);
+}
+.error-msg {
+  font-family: var(--TextFont);
+  font-size: 0.8em;
+  color: var(--error);
+}
+.error-msg::before {
+  content: "** ";
+}
+form button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+.success {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  border-radius: 20px;
+  color: var(--DarkBlack);
+  background-color: var(--White);
+  z-index: 1001;
+  font-family: var(--TextFont);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1em;
+}
+.successoverlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1000;
+}
+.success h1 {
+  font-size: 1.7em;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.success button {
+  border: none;
+  outline: none;
+  background-color: var(--LightGreen);
+  color: var(--White);
+  padding: 15px 25px;
+  border-radius: 25px;
+  font-size: 0.9em;
+}
+.shopping {
+  background-color: var(--DarkGreen);
+  border: none;
+  outline: none;
+  color: var(--White);
+  padding: 12px 22px;
+  border-radius: 5px;
+  font-size: 0.6em;
+  font-weight: normal;
+  letter-spacing: 1px;
+}

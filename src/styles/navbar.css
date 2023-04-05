@@ -1,0 +1,140 @@
+.navbar {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--TextFont);
+  z-index: 1000;
+  box-shadow: 0px -5px 15px 0px var(--LightBlack);
+}
+a {
+  color: var(--VeryLightBlack);
+}
+.topnavbar ul {
+  background-color: var(--DarkGreen);
+  color: var(--VeryLightBlack);
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 60px;
+  font-size: 0.8em;
+  letter-spacing: 1px;
+}
+.topnavbar ul li:first-child {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+.topnavbar ul li:nth-child(3) {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+}
+.topnavbar ul li:nth-child(3) span {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 65px;
+  background-color: var(--White);
+}
+nav div {
+  display: flex;
+  align-items: center;
+  gap: 0.3em;
+  color: var(--DarkGreen);
+  font-family: var(--TitleFont);
+  font-size: 1.4em;
+  letter-spacing: 1px;
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2em;
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+nav ul li:nth-child(2) {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+}
+.search {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search span {
+  position: absolute;
+  right: 13px;
+  top: 6px;
+  cursor: pointer;
+}
+.search input {
+  width: 450px;
+  padding: 7px 60px 7px 15px;
+  border-radius: 20px;
+  border: none;
+  font-size: 0.7em;
+  font-family: var(--TextFont);
+  background-color: var(--LightLightBlack);
+  outline: none;
+}
+.logo {
+  cursor: pointer;
+  user-select: none;
+}
+.dropdown {
+  display: flex;
+  max-height: 60vh;
+  flex-direction: column;
+  position: absolute;
+  top: 60px;
+  font-size: 0.7em;
+  background: var(--White);
+  padding: 10px 20px;
+  gap: 0.5em;
+  width: 100%;
+  box-shadow: 0px 0px 10px 0px var(--LightLightBlack);
+  overflow-y: scroll;
+}
+.dropdown:empty {
+  display: none;
+}
+.searchproduct {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1em;
+  font-family: var(--FontText);
+  border-bottom: 1px solid var(--LightLightBlack);
+  padding: 10px;
+  cursor: pointer;
+}
+.searchproduct img {
+  max-width: 50px;
+  background-color: var(--LightLightBlack);
+  padding: 5px;
+  border-radius: 5px;
+}
+.searchproduct p {
+  cursor: pointer;
+}
+.cartlink {
+  position: relative;
+}
+.cartlink span {
+  display: flex;
+  position: absolute;
+  top: -10px;
+  left: 17px;
+  background-color: var(--LightGreen);
+  padding: 1px 7px;
+  border-radius: 50%;
+  color: var(--White);
+  font-family: var(--TextFont);
+  font-size: 0.8em;
+  border: 2px solid var(--White);
+}

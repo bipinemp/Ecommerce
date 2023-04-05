@@ -1,0 +1,22 @@
+.incdec {
+  height: fit-content;
+  display: flex;
+  gap: 0.5em;
+  align-items: center;
+  font-family: var(--TextFont);
+  font-size: 1.2em;
+  background-color: var(--LightLightBlack);
+  padding: 5px 15px;
+  border-radius: 25px;
+  color: var(--DarkBlack);
+}
+.incdec button {
+  border: none;
+  background-color: transparent;
+}
+.quantityvalue {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  user-select: none;
+}
