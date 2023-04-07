@@ -4,7 +4,7 @@ import { AiOutlineLeft, AiOutlineRight } from "react-icons/ai";
 function Carousel({
   children: slides,
   autoSlide = false,
-  autoSlideInterval = 3000,
+  autoSlideInterval = 4000,
 }) {
   const [current, setCurrent] = useState(0);
   const prev = () => {
@@ -23,9 +23,8 @@ function Carousel({
     <div style={{ overflow: "hidden", position: "relative" }}>
       <div
         style={{
-          Width: "805px",
           display: "flex",
-          transition: "transform 500ms ease-out",
+          transition: "transform 600ms ease-out",
           transform: `translateX(-${current * 100}%)`,
         }}
       >

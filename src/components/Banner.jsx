@@ -1,7 +1,7 @@
 import React from "react";
 import bann1 from "../assets/bann1.jpg";
 import bann2 from "../assets/bann2.jpg";
-import bann3 from "../assets/bann3.png";
+import bann3 from "../assets/bann3.jpg";
 import Carousel from "./Carousel";
 
 function Banner() {
@@ -14,7 +14,11 @@ function Banner() {
           <img
             src={s}
             alt="bannerimg"
-            style={{ width: "800px", objectFit: "cover" }}
+            style={{
+              objectFit: "contain",
+              filter: "brightness(105%)",
+              borderRadius: "5px",
+            }}
           />
         ))}
       </Carousel>

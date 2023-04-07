@@ -131,7 +131,7 @@ function Cart() {
         </div>
       ) : (
         <p className="noitemincart">
-          No items in Cart &nbsp;&nbsp;:( <br />
+          No items in Cart &nbsp;&nbsp;:(
           <br />{" "}
           <button className="shopping" onClick={() => navigate("/")}>
             Continue Shopping <span>{" >>"}</span>

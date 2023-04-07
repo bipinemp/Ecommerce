@@ -53,7 +53,7 @@ function Navbar() {
               <a href="#">Eng</a> <BsChevronDown />
             </span>
             <span>
-              <a href="#">Loaction</a> <BsChevronDown />
+              <a href="#">Location</a> <BsChevronDown />
             </span>
           </li>
         </ul>

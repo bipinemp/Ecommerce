@@ -138,3 +138,9 @@ nav ul li:nth-child(2) {
   font-size: 0.8em;
   border: 2px solid var(--White);
 }
+
+/* Media Queries for navbar  */
+/* @media only screen and (max-width: 1024px) {
+  .topnavbar ul {
+  }
+} */
