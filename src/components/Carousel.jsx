@@ -23,7 +23,7 @@ function Carousel({
     <div style={{ overflow: "hidden", position: "relative" }}>
       <div
         style={{
-          Width: "800px",
+          Width: "805px",
           display: "flex",
           transition: "transform 500ms ease-out",
           transform: `translateX(-${current * 100}%)`,
