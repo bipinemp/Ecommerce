@@ -10,7 +10,7 @@ function Banner() {
   return (
     <div className="banner">
       <Carousel autoSlide={true}>
-        {images.map((s) => (
+        {images.map((s, i) => (
           <img
             src={s}
             alt="bannerimg"
@@ -18,7 +18,9 @@ function Banner() {
               objectFit: "contain",
               filter: "brightness(105%)",
               borderRadius: "5px",
+              userSelect: "none",
             }}
+            key={i}
           />
         ))}
       </Carousel>

@@ -16,7 +16,7 @@ a {
   display: flex;
   justify-content: space-between;
   padding: 10px 60px;
-  font-size: 0.8em;
+  font-size: 0.8rem;
   letter-spacing: 1px;
 }
 .topnavbar ul li:first-child {
@@ -61,6 +61,10 @@ nav ul li:nth-child(2) {
   align-items: center;
   gap: 1em;
 }
+nav ul li:nth-child(2) div:nth-child(2) {
+  display: flex;
+  gap: 1em;
+}
 .search {
   position: relative;
   display: flex;
@@ -88,7 +92,7 @@ nav ul li:nth-child(2) {
 }
 .dropdown {
   display: flex;
-  max-height: 60vh;
+  max-height: 30vh;
   flex-direction: column;
   position: absolute;
   top: 60px;
@@ -126,21 +130,101 @@ nav ul li:nth-child(2) {
   position: relative;
 }
 .cartlink span {
+  width: 25px;
+  text-align: center;
   display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   top: -10px;
   left: 17px;
   background-color: var(--LightGreen);
-  padding: 1px 7px;
+  padding: 3px 0px;
   border-radius: 50%;
   color: var(--White);
   font-family: var(--TextFont);
-  font-size: 0.8em;
+  font-size: 0.65rem;
   border: 2px solid var(--White);
 }
 
 /* Media Queries for navbar  */
-/* @media only screen and (max-width: 1024px) {
+@media only screen and (max-width: 1024px) {
   .topnavbar ul {
+    font-size: 0.7rem;
+    padding: 10px 20px;
   }
-} */
+  nav {
+    padding: 15px 40px;
+  }
+  .search input {
+    width: 350px;
+  }
+  .logo {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .dropdown {
+    font-size: 0.6rem;
+    padding: 10px;
+  }
+  .searchproduct img {
+    max-width: 40px;
+  }
+  .search input {
+    max-width: 280px;
+  }
+  .logo {
+    display: none;
+  }
+  .topnavbar ul {
+    font-size: 0.5rem;
+    letter-spacing: 0.3px;
+    padding: 10px;
+  }
+  nav {
+    padding: 15px 20px;
+    justify-content: center;
+    align-items: center;
+  }
+  nav ul {
+    font-size: 0.8rem;
+    gap: 1em;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .topnavbar ul {
+    padding: 10px 5px;
+    font-size: 0.42rem;
+    letter-spacing: none;
+  }
+  .topnavbar ul li:nth-child(3) {
+    gap: 7px;
+  }
+  nav ul {
+    gap: 1em;
+  }
+  nav .navicon {
+    font-size: 1.4em;
+    padding-top: 5px;
+  }
+  nav ul li:nth-child(2) div:nth-child(2) {
+    gap: 5px;
+  }
+  .search input {
+    max-width: 160px;
+    padding: 7px 40px 7px 15px;
+    transition: all 200ms ease-out;
+  }
+  #searchinput:focus {
+    max-width: 280px;
+  }
+  #none {
+    display: none;
+  }
+  #notnone {
+    display: block;
+  }
+}

@@ -10,13 +10,13 @@ function Footer() {
       <div className="footer1">
         <div>
           <p>20% OFF</p>
-          <h1>FINE SMILE</h1>
+          <h1 id="finesmile">FINE SMILE</h1>
           <p>30 Mar to 10 Apr</p>
         </div>
         <img src={headphones_c_1} alt="" />
         <div>
           <p>Beats Solo Air</p>
-          <h1>Summer Sale</h1>
+          <h1 id="finesmile">Summer Sale</h1>
           <p className="company">
             company that's grown from 270 to 480 employees in the last 12
             months.

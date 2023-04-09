@@ -4,11 +4,27 @@
   gap: 5em;
 }
 .banner {
-  max-width: 1000px;
+  width: 1000px;
   margin: 20px auto;
 }
+
+/* Media Queries starts here  */
+
 @media only screen and (max-width: 1024px) {
   .banner {
     max-width: 680px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .banner {
+    max-width: 400px;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .banner {
+    max-width: 300px;
+  }
+  .home {
+    gap: 2em;
   }
 }

@@ -38,7 +38,7 @@ function Filter() {
           <option value="airpod">Airpod</option>
         </select>
         <span className="icon-container">
-          <AiOutlineCaretDown />
+          <AiOutlineCaretDown className="downicon" />
         </span>
       </div>
       <div>
@@ -49,7 +49,7 @@ function Filter() {
           <option value="highprice">High - Low</option>
         </select>
         <span className="icon-container">
-          <AiOutlineCaretDown />
+          <AiOutlineCaretDown className="downicon" />
         </span>
       </div>
       <div>
@@ -60,12 +60,8 @@ function Filter() {
           <option value="highrating">High - Low</option>
         </select>
         <span className="icon-container">
-          <AiOutlineCaretDown />
+          <AiOutlineCaretDown className="downicon" />
         </span>
-      </div>
-      <div>
-        <p>All Filters</p>
-        <IoOptions />
       </div>
     </div>
   );

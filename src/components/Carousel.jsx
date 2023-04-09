@@ -41,15 +41,17 @@ function Carousel({
       >
         <AiOutlineLeft
           onClick={prev}
-          fontSize="50px"
-          color="var(--LightLightBlack)"
+          fontSize="40px"
+          color="var(--White)"
           cursor="pointer"
+          id="bannerbtn"
         />
         <AiOutlineRight
           onClick={next}
-          fontSize="50px"
-          color="var(--LightLightBlack)"
+          fontSize="40px"
+          color="var(--White)"
           cursor="pointer"
+          id="bannerbtn"
         />
       </div>
       <div style={{ position: "absolute", bottom: "10px", right: 0, left: 0 }}>

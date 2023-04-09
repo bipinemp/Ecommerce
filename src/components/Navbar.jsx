@@ -17,6 +17,7 @@ function Navbar() {
   const { state: state1 } = useContext(cartContext);
   const [searchValue, setSearchValue] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
+  const [display, setDisplay] = useState(false);
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
@@ -35,7 +36,14 @@ function Navbar() {
     return () => {
       document.removeEventListener("mousedown", handler);
     };
-  });
+  }, []);
+
+  const searchFocus = () => {
+    setDisplay(!display);
+  };
+  const searchFocusOut = () => {
+    setDisplay(false);
+  };
 
   return (
     <div className="navbar">
@@ -64,7 +72,7 @@ function Navbar() {
           <span>Shopper</span>
         </div>
         <ul>
-          <li>
+          <li id={display ? "none" : "notnone"}>
             <NavLink
               to="/"
               style={({ isActive }) => ({
@@ -84,6 +92,9 @@ function Navbar() {
                 placeholder="Search Product"
                 value={searchValue}
                 onChange={handleChange}
+                onFocus={searchFocus}
+                onBlur={searchFocusOut}
+                id="searchinput"
               />
               {showDropdown && (
                 <div className="dropdown" ref={ref}>
@@ -106,30 +117,33 @@ function Navbar() {
                       >
                         <img src={item.images[0]} alt="product" />
                         <p>{item.name}</p>
-                        <p>$ {item.price}</p>
+                        <p style={{ fontWeight: "bold" }}>${item.price}</p>
                       </div>
                     ))}
                 </div>
               )}
             </div>
-            <NavLink
-              to="/favourites"
-              style={({ isActive }) => ({
-                color: isActive ? "var(--LightGreen)" : "var(--DarkBlack)",
-              })}
-            >
-              <AiOutlineHeart fontSize="25px" />
-            </NavLink>
-            <NavLink
-              to="/cart"
-              style={({ isActive }) => ({
-                color: isActive ? "var(--LightGreen )" : "var(--DarkBlack)",
-              })}
-              className="cartlink"
-            >
-              <AiOutlineShoppingCart fontSize="25px" />
-              {state1.cart.length > 0 && <span>{state1.cart.length}</span>}
-            </NavLink>
+
+            <div id={display ? "none" : "notnone"}>
+              <NavLink
+                to="/favourites"
+                style={({ isActive }) => ({
+                  color: isActive ? "var(--LightGreen)" : "var(--DarkBlack)",
+                })}
+              >
+                <AiOutlineHeart fontSize="25px" className="navicon" />
+              </NavLink>
+              <NavLink
+                to="/cart"
+                style={({ isActive }) => ({
+                  color: isActive ? "var(--LightGreen )" : "var(--DarkBlack)",
+                })}
+                className="cartlink"
+              >
+                <AiOutlineShoppingCart fontSize="25px" className="navicon" />
+                {state1.cart.length > 0 && <span>{state1.cart.length}</span>}
+              </NavLink>
+            </div>
           </li>
         </ul>
       </nav>

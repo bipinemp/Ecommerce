@@ -28,7 +28,7 @@
 }
 .product img {
   z-index: 50;
-  max-width: 230px;
+  max-width: 180px;
   object-fit: contain;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -57,8 +57,10 @@
 }
 .product .names h1 {
   font-family: var(--TextFont);
-  font-size: 1.1em;
+  font-size: 1rem;
   color: var(--DarkBlack);
+  width: fit-content;
+  word-break: break-word;
 }
 
 .product .names p span {
@@ -66,8 +68,8 @@
 }
 .product .names p {
   font-family: var(--TextFont);
-  font-size: 0.9em;
-  color: var(--DarkBlack);
+  font-size: 1em;
+  color: var(--LightGreen);
   font-weight: bold;
 }
 .product button {
@@ -137,28 +139,21 @@
   outline-color: transparent;
 }
 .filter div {
-  position: relative;
   display: flex;
   flex-direction: column;
   font-family: var(--TextFont);
   font-size: 0.84em;
 }
+
 .filter div .icon-container {
-  width: 20px;
-  position: absolute;
-  right: 3px;
-  bottom: 2.5px;
+  position: relative;
+  display: flex;
   pointer-events: none;
 }
-.filter div:last-child {
-  background-color: var(--LightLightBlack);
-  padding: 5px 30px 5px 15px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 0.5em;
-  align-self: flex-end;
-  border-radius: 10px;
+.filter div .icon-container .downicon {
+  position: absolute;
+  right: 7px;
+  bottom: 7.5px;
 }
 
 /* For singleProduct.jsx */
@@ -310,4 +305,102 @@
   width: 50px;
   display: flex;
   justify-content: center;
+}
+
+/* Media Queries starts here  */
+@media only screen and (max-width: 1024px) {
+  .filter {
+    justify-content: center;
+  }
+  .products .producttitle {
+    text-align: center;
+  }
+  .productPage .product {
+    width: 32%;
+  }
+  .product img {
+    max-width: 120px;
+  }
+  .product .names p {
+    font-size: 0.8rem;
+  }
+  .product .names h1 {
+    font-size: 0.7rem;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .filter {
+    gap: 1.5em;
+  }
+  .filter select {
+    padding: 5px 0px 5px 10px;
+    border-radius: 5px;
+    font-size: 0.6rem;
+  }
+  .filter span {
+    font-size: 0.8rem;
+  }
+  .filter div .icon-container .downicon {
+    bottom: 6px;
+  }
+  .productPage .product {
+    width: 31%;
+  }
+  .product .names {
+    align-items: flex-start;
+  }
+  .product .names h1 {
+    width: 70px;
+    font-size: 0.65rem;
+    letter-spacing: 0.3px;
+  }
+  .product .names p {
+    font-size: 0.6rem;
+  }
+  .product .img span {
+    padding: 5px;
+  }
+  .iconheart {
+    font-size: 15px;
+  }
+  .rating {
+    font-size: 0.8rem;
+  }
+  .icon {
+    font-size: 0.7rem;
+  }
+  .product {
+    gap: 0.3em;
+  }
+  .product img {
+    max-width: 100px;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .filter {
+    gap: 1.3em;
+  }
+  .filter span {
+    font-size: 0.63rem;
+  }
+  .filter select {
+    padding: 5px 0px 5px 5px;
+  }
+  .products .producttitle {
+    font-size: 1.3rem;
+  }
+  .products {
+    padding-bottom: 50px;
+  }
+  .filter div .icon-container .downicon {
+    bottom: 8px;
+  }
+  .product img {
+    max-width: 80px;
+  }
+  .productPage .product {
+    flex-basis: 1;
+    flex-grow: 1;
+  }
 }

@@ -19,7 +19,7 @@ function Products({ state }) {
       <Filter />
       <h1 className="producttitle">Headphones For You!</h1>
       <div className="productPage">
-        {state.filter.map((item) => {
+        {state.filter.map((item, index) => {
           const img = item.images[0];
           const isFavourite = state1.favourite.includes(item);
 
@@ -31,6 +31,7 @@ function Products({ state }) {
                   navigate(`/product/${item.id}`);
                 }
               }}
+              key={index}
             >
               <div className="img">
                 <img src={img} alt="product" />
@@ -40,6 +41,7 @@ function Products({ state }) {
                     event.stopPropagation();
                     addtofavourite(item);
                   }}
+                  style={{ border: isFavourite && "1px solid var(--error)" }}
                 >
                   {isFavourite ? (
                     <AiFillHeart

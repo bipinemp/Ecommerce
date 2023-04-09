@@ -28,7 +28,7 @@
 .footer1 div:nth-child(1) {
   display: flex;
   flex-direction: column;
-  gap: 1em;
+  gap: 10px;
 }
 .footer1 div:nth-child(1) p {
   font-size: 1.2em;
@@ -38,7 +38,7 @@
   line-height: 70px;
 }
 .footer1 img {
-  width: 680px;
+  max-width: 550px;
   position: absolute;
   top: 50%;
   right: 50%;
@@ -57,8 +57,10 @@
   font-size: 0.85em;
 }
 .footer1 div:nth-child(3) h1 {
-  font-size: 3.2em;
+  font-size: 4.2rem;
   line-height: 70px;
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--White);
 }
 .footer1 div:nth-child(3) button {
   width: fit-content;
@@ -73,4 +75,68 @@
 }
 .footer1 div:nth-child(3) button:hover {
   transform: scale(0.9);
+}
+#finesmile {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--White);
+  z-index: 10;
+}
+
+/* Media Queries starts from here */
+@media only screen and (max-width: 1024px) {
+  .footer1 {
+    gap: 5rem;
+  }
+  .footer img {
+    max-width: 300px;
+    z-index: 1;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer1 {
+    gap: 5rem;
+    padding: 50px 30px;
+  }
+  .footer1 p {
+    z-index: 2;
+  }
+  #finesmile {
+    font-size: 2rem;
+    line-height: 40px;
+  }
+  .footer1 {
+    align-items: flex-start;
+  }
+  .footer1 div:nth-child(1) p {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .footer1 {
+    gap: 2em;
+  }
+  .footer img {
+    max-width: 250px;
+    top: 40%;
+  }
+  .footer1 div:nth-child(3) p:nth-child(1) {
+    font-size: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  #finesmile {
+    font-size: 1.7rem;
+  }
+  .footer1 div:nth-child(3) button {
+    background: transparent;
+    color: var(--White);
+    border: 1.5px solid var(--White);
+  }
+  .footer2 {
+    margin-top: 100px;
+    font-size: 0.6rem;
+  }
 }

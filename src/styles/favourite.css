@@ -15,9 +15,10 @@
 .favouriteitems {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
   gap: 0.7em;
 }
-.favouriteitem {
+.favouriteitems .favouriteitem {
   width: 24%;
   cursor: pointer;
   display: flex;
@@ -27,16 +28,24 @@
   gap: 5px;
   margin-bottom: 30px;
 }
+
 .favouriteitem h1 {
-  font-size: 1.2em;
+  font-size: 1em;
   pointer-events: none;
+}
+.favouriteitem .img {
+  position: relative;
+  width: 100%;
+  background-color: var(--LightLightBlack);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 .favouriteitem img {
   padding: 20px;
-  max-width: 250px;
-  background-color: var(--LightLightBlack);
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  max-width: 180px;
 }
 .errorfav {
   display: flex;
@@ -60,4 +69,42 @@
   font-size: 0.8em;
   font-weight: normal;
   letter-spacing: 2px;
+  border: 1px solid transparent;
+}
+
+/* Media Queriex starts from here  */
+@media only screen and (max-width: 1024px) {
+  .favouriteitems .favouriteitem {
+    width: 32%;
+  }
+  .favouriteitem img {
+    max-width: 120px;
+  }
+  .favouriteitem h1 {
+    font-size: 0.65rem;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .favouriteitems {
+    justify-content: center;
+  }
+  .favouriteitems .favouriteitem {
+    width: 31%;
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .favouriteitems .favouriteitem {
+    width: 30%;
+  }
+  .favouriteitem img {
+    max-width: 80px;
+  }
+  .favouriteitem h1 {
+    font-size: 0.55rem;
+  }
+  .icon {
+    font-size: 0.6rem;
+  }
 }
