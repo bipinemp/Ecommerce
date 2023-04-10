@@ -430,6 +430,9 @@ form button:disabled {
   .formright button {
     font-size: 0.75rem;
   }
+  .success {
+    width: 70%;
+  }
 }
 @media only screen and (max-width: 425px) {
   .checkout div:nth-child(1) form {
@@ -444,5 +447,12 @@ form button:disabled {
   .modal form input {
     padding: 5px 10px;
     font-size: 0.65rem;
+  }
+  .success {
+    width: 90%;
+  }
+  .success h1 {
+    font-size: 1.2rem;
+    letter-spacing: normal;
   }
 }
