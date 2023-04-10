@@ -46,6 +46,7 @@ function SingleProduct() {
       progress: undefined,
       theme: "colored",
       transition: Flip,
+      className: "successmsg",
     });
   };
 

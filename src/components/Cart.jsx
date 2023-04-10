@@ -109,13 +109,15 @@ function Cart() {
                   <span className="quantityvalue">{item.quantity}</span>
                   <button onClick={() => handleIncrement(item)}>+</button>
                 </div>
-                <div>
-                  <p className="bold">Each</p>
-                  <p>$ {item.price}</p>
-                </div>
-                <div>
-                  <p className="bold">Total</p>
-                  <p className="totalvalue">$ {item.quantity * item.price}</p>
+                <div className="priceeachtotal">
+                  <div>
+                    <p className="bold">Each</p>
+                    <p>$ {item.price}</p>
+                  </div>
+                  <div>
+                    <p className="bold">Total</p>
+                    <p className="totalvalue">$ {item.quantity * item.price}</p>
+                  </div>
                 </div>
               </div>
             ))}

@@ -327,6 +327,31 @@
   .product .names h1 {
     font-size: 0.7rem;
   }
+
+  /* For single product  */
+  .singleProduct {
+    width: 90%;
+    gap: 2em;
+  }
+  .singleProductright div:nth-child(2) {
+    gap: 2em;
+  }
+  .singleProductright div:first-child h1 {
+    font-size: 1.3rem;
+  }
+  .singleProductright div:first-child p {
+    font-size: 0.7rem;
+  }
+  .singleProductright div:nth-child(2) div {
+    padding: 5px 15px;
+    gap: 0.8rem;
+  }
+  .singleProductright div:nth-child(2) p {
+    font-size: 1.2rem;
+  }
+  .singleProductright div:nth-child(3) button:nth-child(1) {
+    padding: 15px 20px;
+  }
 }
 @media only screen and (max-width: 768px) {
   .filter {
@@ -375,6 +400,22 @@
   .product img {
     max-width: 100px;
   }
+
+  /* For single product  */
+  .singleProduct {
+    flex-direction: column;
+    padding: 30px 20px 50px 20px;
+  }
+  .singleProduct .singleProductleft,
+  .singleProduct .singleProductright {
+    width: 100%;
+  }
+
+  .singleProductleft div:nth-child(2) img {
+    width: 22%;
+    height: 90px;
+    padding: 10px;
+  }
 }
 
 @media only screen and (max-width: 425px) {
@@ -402,5 +443,19 @@
   .productPage .product {
     flex-basis: 1;
     flex-grow: 1;
+  }
+
+  /* For single product  */
+  .singleProductleft div:nth-child(2) img {
+    height: 60px;
+    padding: 5px;
+  }
+  .singleProductleft div:nth-child(1) img {
+    padding: 70px;
+  }
+  .successmsg {
+    width: 280px;
+    margin: 0 auto;
+    margin-top: 20px;
   }
 }

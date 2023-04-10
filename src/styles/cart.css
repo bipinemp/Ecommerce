@@ -111,7 +111,6 @@
 
 /* For Checkout component */
 .checkout {
-  width: 30%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -362,4 +361,88 @@ form button:disabled {
   font-size: 0.6em;
   font-weight: normal;
   letter-spacing: 1px;
+}
+.priceeachtotal {
+  display: flex;
+  gap: 1.5em;
+}
+
+/* Media Queries starts from here  */
+@media only screen and (max-width: 1200px) {
+  .cartitem img {
+    max-width: 100px;
+  }
+  .cartitemtitle h1 {
+    width: 170px;
+    word-wrap: break-word;
+    font-size: 1rem;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .cartcheckout {
+    flex-direction: column;
+  }
+  .cart {
+    width: 85%;
+    margin: 0 auto;
+  }
+  .checkout {
+    width: 85%;
+    margin: 0 auto;
+    gap: 1em;
+  }
+  .checkout div:nth-child(4) button {
+    width: fit-content;
+    padding: 15px 25px;
+  }
+  .cart {
+    height: 50vh;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  .priceeachtotal {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .cart {
+    width: 95%;
+    position: relative;
+  }
+  .checkout {
+    width: 95%;
+  }
+  .cartitem {
+    gap: 1em;
+    width: 100%;
+  }
+  .modal {
+    width: 95%;
+    padding: 50px 20px 50px 20px;
+  }
+  .modal form label {
+    font-size: 0.75rem;
+  }
+  .modal form input {
+    font-size: 0.8rem;
+  }
+  .formright button {
+    font-size: 0.75rem;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .checkout div:nth-child(1) form {
+    flex-direction: column;
+  }
+  .checkout div:nth-child(1) form button {
+    padding: 10px 20px;
+  }
+  .modal form label {
+    font-size: 0.65rem;
+  }
+  .modal form input {
+    padding: 5px 10px;
+    font-size: 0.65rem;
+  }
 }
