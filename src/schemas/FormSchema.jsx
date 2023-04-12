@@ -6,7 +6,7 @@ export const FormSchema = yup.object().shape({
   fullname: yup.string().required("Please enter the fullname"),
   phone: yup
     .string()
-    .matches(phoneRegex, "Invalid phone number")
+    .matches(phoneRegex, "Phone number must be 10 digits long")
     .required("Please enter the Phone number"),
   province: yup.string().required("Please enter the province"),
   city: yup.string().required("Please enter the city"),
