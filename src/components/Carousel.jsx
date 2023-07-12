@@ -17,7 +17,7 @@ function Carousel({
     if (!autoSlide) return;
     const slideInterval = setInterval(next, autoSlideInterval);
     return () => clearInterval(slideInterval);
-  });
+  }, []);
 
   return (
     <div style={{ overflow: "hidden", position: "relative" }}>
@@ -65,6 +65,7 @@ function Carousel({
         >
           {slides.map((_, index) => (
             <div
+              key={index}
               style={{
                 transition: "all 150ms linear",
                 width: "6px",

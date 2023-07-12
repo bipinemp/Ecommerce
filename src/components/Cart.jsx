@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from "react";
 import { cartContext } from "../context/cartContext";
 import { AiOutlineShopping } from "react-icons/ai";
-import { toast, Flip } from "react-toastify";
+
 import "../styles/cart.css";
 import Rating from "./Rating";
 import "../styles/global.css";
@@ -10,6 +10,7 @@ import Modal from "./Modal";
 import Form from "./Form";
 import { useNavigate } from "react-router-dom";
 import checked from "../assets/checked.png";
+import toast from "react-hot-toast";
 
 function Cart() {
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ function Cart() {
 
   useEffect(() => {
     dispatch({ type: "GET_TOTAL" });
-  }, [state.cart, dispatch]);
+  }, [state.cart, state.total, state.shipping, state.discount]);
 
   return (
     <div className="cartmain">
@@ -68,31 +69,21 @@ function Cart() {
       {state.cart.length > 0 ? (
         <div className="cartcheckout">
           <div className="cart">
-            {state.cart.map((item) => (
-              <div className="cartitem">
+            {state.cart.map((item, index) => (
+              <div className="cartitem" key={index}>
                 <img src={item.images[0]} alt="product" width="100px" />
                 <div className="cartitemtitle">
                   <div>
                     <h1>{item.name}</h1>
-                    <p>
+                    <div>
                       <Rating stars={item.rating} reviews={item.reviews} />
-                    </p>
+                    </div>
                   </div>
                   <div>
                     <p
                       onClick={() => {
                         dispatch({ type: "REMOVE_FROM_CART", payload: item });
-                        toast.error("Item removed from Cart", {
-                          position: "top-center",
-                          autoClose: 1000,
-                          hideProgressBar: false,
-                          closeOnClick: true,
-                          pauseOnHover: true,
-                          draggable: false,
-                          progress: undefined,
-                          theme: "colored",
-                          transition: Flip,
-                        });
+                        toast.error("Item removed from Cart");
                       }}
                     >
                       Remove

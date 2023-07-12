@@ -30,7 +30,7 @@ function Navbar() {
 
   useEffect(() => {
     const handler = (e) => {
-      if (!ref.current.contains(e.target)) {
+      if (!ref.current?.contains(e.target)) {
         setShowDropdown(false);
       }
     };

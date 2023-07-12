@@ -13,7 +13,7 @@ function Checkout() {
 
   useEffect(() => {
     dispatch({ type: "SUMMARY_TOTAL" });
-  }, [state, dispatch]);
+  }, [state.cart, state.total, state.shipping, state.discount]);
 
   return (
     <div className="checkout">

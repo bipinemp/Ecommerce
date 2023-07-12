@@ -101,7 +101,7 @@
   gap: 0.2em;
   font-family: var(--TextFont);
 }
-.rating p {
+.rating span {
   font-size: 0.8em;
 }
 .products {

@@ -5,7 +5,7 @@ import Rating from "./Rating";
 import "../styles/products.css";
 import { cartContext } from "../context/cartContext";
 import Quantity from "./Quantity";
-import { toast, Flip } from "react-toastify";
+import toast from "react-hot-toast";
 
 function SingleProduct() {
   const { productId } = useParams();
@@ -36,18 +36,7 @@ function SingleProduct() {
 
   const addToCart = (val) => {
     dispatch1({ type: "ADD_TO_CART", payload: val, quan: quan });
-    toast.success("Item Added To Cart", {
-      position: "top-center",
-      autoClose: 1000,
-      hideProgressBar: false,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: false,
-      progress: undefined,
-      theme: "colored",
-      transition: Flip,
-      className: "successmsg",
-    });
+    toast.success("Item Added To Cart");
   };
 
   return (

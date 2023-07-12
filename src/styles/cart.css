@@ -57,7 +57,6 @@
   align-items: flex-start;
   padding-bottom: 20px;
   padding-top: 20px;
-  border-bottom: 2px solid var(--LightLightBlack);
 }
 .totalvalue {
   width: 70px;
@@ -84,10 +83,13 @@
 }
 .grandtotal {
   display: flex;
+  background-color: crimson;
   justify-content: space-between;
   margin-top: 20px;
   padding-bottom: 50px;
   padding-right: 25px;
+  border-top: 2px solid var(--LightLightBlack);
+  padding-top: 10px;
 }
 .noitemincart {
   width: 100%;
@@ -454,5 +456,8 @@ form button:disabled {
   .success h1 {
     font-size: 1.2rem;
     letter-spacing: normal;
+  }
+  .grandtotal {
+    width: 100%;
   }
 }

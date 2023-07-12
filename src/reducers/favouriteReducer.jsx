@@ -12,6 +12,11 @@ export const reducer = (state, action) => {
         ...state,
         favourite: favourites,
       };
+    case "REMOVE_FROM_FAVOURITE":
+      return {
+        ...state,
+        favourite: state.favourite.filter((item) => item !== action.payload),
+      };
     default:
       return state;
   }

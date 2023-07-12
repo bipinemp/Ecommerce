@@ -19,10 +19,10 @@ const Rating = ({ stars, reviews }) => {
   });
 
   return (
-    <div className="rating">
+    <section className="rating">
       <div>{ratingStar}</div>
-      {reviews && <p>({reviews})</p>}
-    </div>
+      {reviews && <span>({reviews})</span>}
+    </section>
   );
 };
 export default Rating;

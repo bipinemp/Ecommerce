@@ -5,7 +5,7 @@ import { favouriteContext } from "../context/favouriteContext";
 import Rating from "../components/Rating";
 
 function Favourite() {
-  const { state } = useContext(favouriteContext);
+  const { state, dispatch } = useContext(favouriteContext);
   const navigate = useNavigate();
   return (
     <div className="favourite">
@@ -13,16 +13,27 @@ function Favourite() {
       {state.favourite.length > 0 ? (
         <div className="favouriteitems">
           {state.favourite.map((prod, i) => (
-            <div
-              key={i}
-              className="favouriteitem"
-              onClick={() => navigate(`/product/${prod.id}`)}
-            >
+            <div key={i} className="favouriteitem">
               <div className="img">
-                <img src={prod.images[0]} alt="product" />
+                <img
+                  src={prod.images[0]}
+                  alt="product"
+                  onClick={() => navigate(`/product/${prod.id}`)}
+                />
               </div>
               <h1>{prod.name}</h1>
               <Rating stars={prod.rating} reviews={prod.reviews} />
+              <span
+                style={{
+                  fontWeight: "bold",
+                  color: "crimson",
+                }}
+                onClick={() =>
+                  dispatch({ type: "REMOVE_FROM_FAVOURITE", payload: prod })
+                }
+              >
+                Remove
+              </span>
             </div>
           ))}
         </div>
