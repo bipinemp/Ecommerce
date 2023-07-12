@@ -46,7 +46,7 @@ function Cart() {
             <h1>
               Your order has been <br /> accepted
             </h1>
-            <p>Transection ID: {(123456798 * Math.random()).toFixed()}</p>
+            <p>Transaction ID: {(123456798 * Math.random()).toFixed()}</p>
             <button
               onClick={() => {
                 navigate("/");

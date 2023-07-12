@@ -10,11 +10,13 @@ import "../styles/navbar.css";
 import logo from "../assets/logo.png";
 import { productsContext } from "../context/productsContext";
 import { cartContext } from "../context/cartContext";
+import { favouriteContext } from "../context/favouriteContext";
 
 function Navbar() {
   const navigate = useNavigate();
   const { state } = useContext(productsContext);
   const { state: state1 } = useContext(cartContext);
+  const { state: state2 } = useContext(favouriteContext);
   const [searchValue, setSearchValue] = useState("");
   const [showDropdown, setShowDropdown] = useState(false);
   const [display, setDisplay] = useState(false);
@@ -130,8 +132,14 @@ function Navbar() {
                 style={({ isActive }) => ({
                   color: isActive ? "var(--LightGreen)" : "var(--DarkBlack)",
                 })}
+                className="cartlink"
               >
                 <AiOutlineHeart fontSize="25px" className="navicon" />
+                {state2.favourite.length > 0 && (
+                  <span style={{ backgroundColor: "crimson" }}>
+                    {state2.favourite.length}
+                  </span>
+                )}
               </NavLink>
               <NavLink
                 to="/cart"
