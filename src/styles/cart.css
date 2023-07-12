@@ -83,7 +83,6 @@
 }
 .grandtotal {
   display: flex;
-  background-color: crimson;
   justify-content: space-between;
   margin-top: 20px;
   padding-bottom: 50px;
