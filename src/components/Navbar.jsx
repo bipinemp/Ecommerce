@@ -18,12 +18,20 @@ function Navbar() {
   const { state: state1 } = useContext(cartContext);
   const { state: state2 } = useContext(favouriteContext);
   const [searchValue, setSearchValue] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
   const [showDropdown, setShowDropdown] = useState(false);
+
   const [display, setDisplay] = useState(false);
 
   const handleChange = (e) => {
     setSearchValue(e.target.value);
     setShowDropdown(true);
+
+    const results = state.products.filter((product) =>
+      product.name.toLowerCase().includes(searchValue)
+    );
+
+    setSearchResults(results);
   };
 
   let ref = useRef();
@@ -100,28 +108,27 @@ function Navbar() {
               />
               {showDropdown && (
                 <div className="dropdown" ref={ref}>
-                  {state.products
-                    .filter((item) => {
-                      const searchProduct = searchValue.toLowerCase();
-                      const name = item.name.toLowerCase();
-
-                      if (searchProduct && name.startsWith(searchProduct)) {
-                        return true;
-                      }
-                    })
-                    .map((item) => (
-                      <div
-                        className="searchproduct"
-                        onClick={() => {
-                          navigate(`/product/${item.id}`);
-                          setShowDropdown(false);
-                        }}
-                      >
-                        <img src={item.images[0]} alt="product" />
-                        <p>{item.name}</p>
-                        <p style={{ fontWeight: "bold" }}>${item.price}</p>
-                      </div>
-                    ))}
+                  {searchResults.length === 0 ? (
+                    <div style={{ color: "crimson", fontWeight: "bold" }}>
+                      No products found
+                    </div>
+                  ) : (
+                    <>
+                      {searchResults.map((item) => (
+                        <div
+                          className="searchproduct"
+                          onClick={() => {
+                            navigate(`/product/${item.id}`);
+                            setShowDropdown(false);
+                          }}
+                        >
+                          <img src={item.images[0]} alt="product" />
+                          <p>{item.name}</p>
+                          <p style={{ fontWeight: "bold" }}>${item.price}</p>
+                        </div>
+                      ))}
+                    </>
+                  )}
                 </div>
               )}
             </div>
