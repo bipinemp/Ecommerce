@@ -18,7 +18,7 @@ function Checkout() {
   return (
     <div className="checkout">
       <div>
-        <label htmlFor="checkout">ENTER PROMO CODE</label>
+        <label htmlFor="checkout">ENTER PROMO CODE (helloworld)</label>
         <form onSubmit={handleSubmit}>
           <input
             type="text"
